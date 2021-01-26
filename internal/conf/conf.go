@@ -19,8 +19,8 @@ var (
 	Name       = App.Flag("name", "Application name").Default(NG.Generate()).String()
 
 	Version = App.Command("version", "Display information about [ theBund ]")
-	vBanner = App.Flag("banner", "Display [ theBund ] banner .").Default("true").Bool()
-	vTable  = App.Flag("table", "Display [ theBund ] inner information .").Default("true").Bool()
+	VBanner = App.Flag("banner", "Display [ theBund ] banner .").Default("true").Bool()
+	VTable  = App.Flag("table", "Display [ theBund ] inner information .").Default("true").Bool()
 
 	Interactive = App.Command("interactive", "Run [ theBund ] interactive shell")
 
