@@ -18,5 +18,5 @@ func Main() {
 	case conf.Shell.FullCommand():
 		Shell()
 	}
-	fmt.Println(*conf.Color)
+	fmt.Println(*conf.ID)
 }
