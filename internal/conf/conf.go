@@ -26,4 +26,7 @@ var (
 
 	Shell  = App.Command("shell", "Run [ theBund ] batch execution")
 	Script = Shell.Arg("script", "File containing [ theBund ] code.").Required().ExistingFile()
+
+	Eval = App.Command("eval", "Evaluate [ theBund ] expression")
+	Expr = Eval.Arg("expression", "[ theBund ] expression.").Required().String()
 )

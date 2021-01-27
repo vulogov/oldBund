@@ -16,6 +16,8 @@ func Main() {
 		Interactive()
 	case conf.Shell.FullCommand():
 		Shell()
+	case conf.Eval.FullCommand():
+		Eval()
 	}
 	Fin()
 }

@@ -5,6 +5,7 @@ go 1.15
 require (
 	github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc // indirect
 	github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf // indirect
+	github.com/antlr/antlr4 v0.0.0-20210127063407-3c67a9d4eaa2
 	github.com/common-nighthawk/go-figure v0.0.0-20200609044655-c4b36f998cf2
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/goombaio/namegenerator v0.0.0-20181006234301-989e774b106e
