@@ -8,6 +8,7 @@ import (
 )
 
 func Version() {
+	Init()
 	banner.Banner(fmt.Sprintf("[ theBund %v ]", conf.BVersion))
 	banner.Table()
 }

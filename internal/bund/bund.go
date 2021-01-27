@@ -1,7 +1,6 @@
 package bund
 
 import (
-	"fmt"
 	"os"
 
 	"gopkg.in/alecthomas/kingpin.v2"
@@ -18,5 +17,5 @@ func Main() {
 	case conf.Shell.FullCommand():
 		Shell()
 	}
-	fmt.Println(*conf.ID)
+	Fin()
 }
