@@ -32,3 +32,15 @@ func (s *BaseBundListener) EnterTerm(ctx *TermContext) {}
 
 // ExitTerm is called when production term is exited.
 func (s *BaseBundListener) ExitTerm(ctx *TermContext) {}
+
+// EnterBlock is called when production block is entered.
+func (s *BaseBundListener) EnterBlock(ctx *BlockContext) {}
+
+// ExitBlock is called when production block is exited.
+func (s *BaseBundListener) ExitBlock(ctx *BlockContext) {}
+
+// EnterPair is called when production pair is entered.
+func (s *BaseBundListener) EnterPair(ctx *PairContext) {}
+
+// ExitPair is called when production pair is exited.
+func (s *BaseBundListener) ExitPair(ctx *PairContext) {}
