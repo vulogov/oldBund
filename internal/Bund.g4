@@ -5,36 +5,70 @@
 grammar Bund;
 
 expressions
-  : (term | block | directive | cmd | lambda | DUPLICATE | DROP | TOBEGIN | TOEND )*
+  : ( integer
+    | oct_integer
+    | hex_integer
+    | bin_integer
+    | float_term
+    | string_term
+    | false_term
+    | true_term
+    | name_term
+    | duplicate_term
+    | drop_term
+    | begin
+    | end
+    | pair
+    | block
+    | directive
+    | cmd
+    | lambda )*
   ;
 
-term
-  : INTEGER
-  | OCT_INTEGER
-  | HEX_INTEGER
-  | BIN_INTEGER
-  | FLOAT_NUMBER
-  | TRUE
-  | FALSE
-  | STRING
-  | NAME
-  | pair
-  ;
+term: ( integer
+  | oct_integer | hex_integer | bin_integer
+  | float_term | string_term | false_term | true_term
+  | name_term | duplicate_term | drop_term
+  | begin | end | pair | block | directive | cmd ) ;
+//
+// Common terms
+//
+true_term:    value=TRUE ;
+false_term:   value=FALSE ;
+string_term:  value=STRING ;
+float_term:   value=FLOAT_NUMBER ;
+bin_integer:  value=BIN_INTEGER ;
+hex_integer:  value=HEX_INTEGER ;
+oct_integer:  value=OCT_INTEGER ;
+integer:      value=INTEGER ;
+
+
+//
+// Name term
+//
+name_term:    value=NAME ;
+//
+// Stack management terms
+//
+duplicate_term: value=DUPLICATE ;
+drop_term:      value=DROP ;
+begin:          value=TOBEGIN;
+end:            value=TOEND ;
 
 block
   : '|' (values+=term)* '|'
   ;
 
 pair
-  : '(' head=term tail=term ')'
+  : '(' head=NAME tail=term ')'
   ;
 
 directive
-  : (op+=DIR)+ name=NAME
+  : op=DIR name=NAME
   ;
 
 cmd
-  : (command+=CMD)+
+  : command=CMD
   ;
 
 lambda
@@ -94,19 +128,19 @@ TOEND:   ';' ;
 SLASH:   '/' ;
 
 DIR
-  : ('+'|'-'|'*'|'`'|'~')
+  : ('+'|'-'|'*'|'`'|'~')+
   ;
 
 CMD
-  : ('@'|'$'|'&'|'='|','|'%'|'<'|'>')
+  : SPACES ('@'|'$'|'&'|'='|','|'%'|'<'|'>')+ SPACES
   ;
 
 DUPLICATE
-  : '^'
+  : SPACES '^' SPACES
   ;
 
 DROP
-  : '_'
+  : SPACES '_' SPACES
   ;
 
 SKIP_
