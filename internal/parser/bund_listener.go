@@ -20,6 +20,15 @@ type BundListener interface {
 	// EnterPair is called when entering the pair production.
 	EnterPair(c *PairContext)
 
+	// EnterDirective is called when entering the directive production.
+	EnterDirective(c *DirectiveContext)
+
+	// EnterCmd is called when entering the cmd production.
+	EnterCmd(c *CmdContext)
+
+	// EnterLambda is called when entering the lambda production.
+	EnterLambda(c *LambdaContext)
+
 	// ExitExpressions is called when exiting the expressions production.
 	ExitExpressions(c *ExpressionsContext)
 
@@ -31,4 +40,13 @@ type BundListener interface {
 
 	// ExitPair is called when exiting the pair production.
 	ExitPair(c *PairContext)
+
+	// ExitDirective is called when exiting the directive production.
+	ExitDirective(c *DirectiveContext)
+
+	// ExitCmd is called when exiting the cmd production.
+	ExitCmd(c *CmdContext)
+
+	// ExitLambda is called when exiting the lambda production.
+	ExitLambda(c *LambdaContext)
 }

@@ -44,3 +44,21 @@ func (s *BaseBundListener) EnterPair(ctx *PairContext) {}
 
 // ExitPair is called when production pair is exited.
 func (s *BaseBundListener) ExitPair(ctx *PairContext) {}
+
+// EnterDirective is called when production directive is entered.
+func (s *BaseBundListener) EnterDirective(ctx *DirectiveContext) {}
+
+// ExitDirective is called when production directive is exited.
+func (s *BaseBundListener) ExitDirective(ctx *DirectiveContext) {}
+
+// EnterCmd is called when production cmd is entered.
+func (s *BaseBundListener) EnterCmd(ctx *CmdContext) {}
+
+// ExitCmd is called when production cmd is exited.
+func (s *BaseBundListener) ExitCmd(ctx *CmdContext) {}
+
+// EnterLambda is called when production lambda is entered.
+func (s *BaseBundListener) EnterLambda(ctx *LambdaContext) {}
+
+// ExitLambda is called when production lambda is exited.
+func (s *BaseBundListener) ExitLambda(ctx *LambdaContext) {}

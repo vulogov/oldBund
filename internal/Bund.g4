@@ -5,8 +5,7 @@
 grammar Bund;
 
 expressions
-  : term*
-  | block*
+  : (term | block | directive | cmd | lambda | DUPLICATE | DROP | TOBEGIN | TOEND )*
   ;
 
 term
@@ -18,17 +17,29 @@ term
   | TRUE
   | FALSE
   | STRING
+  | NAME
   | pair
   ;
 
 block
-  : '|' head=term (term)* '|'
+  : '|' (values+=term)* '|'
   ;
 
 pair
   : '(' head=term tail=term ')'
   ;
 
+directive
+  : (op+=DIR)+ name=NAME
+  ;
+
+cmd
+  : (command+=CMD)+
+  ;
+
+lambda
+  : '[' name=NAME ']' (body+=term)* '.'
+  ;
 
 INTEGER
   : (SIGN)? DECIMAL_INTEGER
@@ -70,6 +81,32 @@ FALSE
   : 'false'
   | 'FALSE'
   | '#F'
+  ;
+
+NAME
+  : ID_START ID_CONTINUE*
+  ;
+
+
+
+TOBEGIN: ':' ;
+TOEND:   ';' ;
+SLASH:   '/' ;
+
+DIR
+  : ('+'|'-'|'*'|'`'|'~')
+  ;
+
+CMD
+  : ('@'|'$'|'&'|'='|','|'%'|'<'|'>')
+  ;
+
+DUPLICATE
+  : '^'
+  ;
+
+DROP
+  : '_'
   ;
 
 SKIP_
@@ -120,6 +157,17 @@ fragment LONG_STRING_ITEM
   : ~'\\'
   | '\\' (RN | .)
   ;
+
+fragment ID_START
+ : ([A-Z]|[a-z]|SLASH)
+ | [a-z]
+ ;
+
+fragment ID_CONTINUE
+ : ID_START
+ | [0-9]
+ | SLASH
+ ;
 
 //
 // SKIP fragments

@@ -20,13 +20,16 @@ var (
 
 	Version = App.Command("version", "Display information about [ theBund ]")
 	VBanner = App.Flag("banner", "Display [ theBund ] banner .").Default("true").Bool()
-	VTable  = App.Flag("table", "Display [ theBund ] inner information .").Default("true").Bool()
+	VTable  = Version.Flag("table", "Display [ theBund ] inner information .").Default("true").Bool()
 
 	Interactive = App.Command("interactive", "Run [ theBund ] interactive shell")
 
 	Shell  = App.Command("shell", "Run [ theBund ] batch execution")
 	Script = Shell.Arg("script", "File containing [ theBund ] code.").Required().ExistingFile()
 
-	Eval = App.Command("eval", "Evaluate [ theBund ] expression")
+	Eval        = App.Command("eval", "Evaluate [ theBund ] expression")
+	LexerPrint  = Eval.Flag("lexer", "Print the output of the Lexer").Default("false").Bool()
+	ParserPrint = Eval.Flag("parser", "Print the output of the Parser").Default("false").Bool()
+
 	Expr = Eval.Arg("expression", "[ theBund ] expression.").Required().String()
 )

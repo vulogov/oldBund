@@ -9,5 +9,12 @@ import (
 
 func Eval() {
 	Init()
-	parse.Parse(*conf.Expr)
+	if *conf.LexerPrint {
+		parse.LexerPrint(*conf.Expr)
+		return
+	}
+	if *conf.ParserPrint {
+		parse.ParserPrint(*conf.Expr)
+		return
+	}
 }
