@@ -17,4 +17,5 @@ func Eval() {
 		parse.ParserPrint(*conf.Expr)
 		return
 	}
+	parse.ParserExec(*conf.Expr)
 }
