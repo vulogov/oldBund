@@ -8,6 +8,7 @@ require (
 	github.com/antlr/antlr4 v0.0.0-20210127063407-3c67a9d4eaa2
 	github.com/common-nighthawk/go-figure v0.0.0-20200609044655-c4b36f998cf2
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/gammazero/deque v0.0.0-20201010052221-3932da5530cc
 	github.com/goombaio/namegenerator v0.0.0-20181006234301-989e774b106e
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 	github.com/pieterclaerhout/go-log v1.14.0
