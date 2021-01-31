@@ -6,10 +6,12 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 
 	"github.com/vulogov/Bund/internal/parser"
+	"github.com/vulogov/Bund/internal/vm"
 )
 
 type bundListener struct {
 	*parser.BaseBundListener
+	vm *vm.VM
 }
 
 func ParserPrint(code string) {
@@ -17,12 +19,10 @@ func ParserPrint(code string) {
 	lexer := parser.NewBundLexer(_input)
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 	p := parser.NewBundParser(stream)
-	antlr.ParseTreeWalkerDefault.Walk(&bundListener{}, p.Expressions())
+	listener := new(bundListener)
+	listener.vm = new(vm.VM)
+	antlr.ParseTreeWalkerDefault.Walk(listener, p.Expressions())
 }
-
-// func (l *bundListener) ExitTerm(c *parser.TermContext) {
-// 	fmt.Printf(">>> %s  \n", c.GetText())
-// }
 
 func (l *bundListener) ExitPair(c *parser.PairContext) {
 	fmt.Printf("pair: %s %+v \n", c.GetText(), c.GetHead())
