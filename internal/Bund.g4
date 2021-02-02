@@ -6,6 +6,7 @@ grammar Bund;
 
 expressions
   : ( integer
+    | nth
     | oct_integer
     | hex_integer
     | bin_integer
@@ -25,11 +26,16 @@ expressions
     | lambda )*
   ;
 
-term: ( integer
+term: ( nth | integer
   | oct_integer | hex_integer | bin_integer
   | float_term | string_term | false_term | true_term
   | name_term | duplicate_term | drop_term
   | begin | end | pair | block | directive | cmd ) ;
+
+pvalue: (integer | nth
+  | oct_integer | hex_integer | bin_integer
+  | float_term | string_term | false_term | true_term
+  | name_term | directive | cmd ) ;
 //
 // Common terms
 //
@@ -41,6 +47,7 @@ bin_integer:  value=BIN_INTEGER ;
 hex_integer:  value=HEX_INTEGER ;
 oct_integer:  value=OCT_INTEGER ;
 integer:      value=INTEGER ;
+nth:          value=NTH ;
 
 
 //
@@ -60,7 +67,7 @@ block
   ;
 
 pair
-  : '(' head=NAME tail=term ')'
+  : '{' head=name_term tail=pvalue '}'
   ;
 
 directive
@@ -96,6 +103,10 @@ BIN_INTEGER
   : '0' [bB] [01]+
   ;
 
+NTH
+  : '#' DECIMAL_INTEGER
+  ;
+
 FLOAT_NUMBER
   : EXPONENT_OR_POINT_FLOAT
   ;
@@ -128,19 +139,19 @@ TOEND:   ';' ;
 SLASH:   '/' ;
 
 DIR
-  : ('+'|'-'|'*'|'`'|'~')+
+  : ('@'|'%'|'*'|'`'|'~'|'$')+
   ;
 
 CMD
-  : SPACES ('@'|'$'|'&'|'='|','|'%'|'<'|'>')+ SPACES
+  : ('+'|'-'|'&'|'='|','|'$'|'<'|'>')+
   ;
 
 DUPLICATE
-  : SPACES '^' SPACES
+  : '^'
   ;
 
 DROP
-  : SPACES '_' SPACES
+  : '_'
   ;
 
 SKIP_

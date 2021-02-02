@@ -14,6 +14,9 @@ type BundListener interface {
 	// EnterTerm is called when entering the term production.
 	EnterTerm(c *TermContext)
 
+	// EnterPvalue is called when entering the pvalue production.
+	EnterPvalue(c *PvalueContext)
+
 	// EnterTrue_term is called when entering the true_term production.
 	EnterTrue_term(c *True_termContext)
 
@@ -37,6 +40,9 @@ type BundListener interface {
 
 	// EnterInteger is called when entering the integer production.
 	EnterInteger(c *IntegerContext)
+
+	// EnterNth is called when entering the nth production.
+	EnterNth(c *NthContext)
 
 	// EnterName_term is called when entering the name_term production.
 	EnterName_term(c *Name_termContext)
@@ -74,6 +80,9 @@ type BundListener interface {
 	// ExitTerm is called when exiting the term production.
 	ExitTerm(c *TermContext)
 
+	// ExitPvalue is called when exiting the pvalue production.
+	ExitPvalue(c *PvalueContext)
+
 	// ExitTrue_term is called when exiting the true_term production.
 	ExitTrue_term(c *True_termContext)
 
@@ -97,6 +106,9 @@ type BundListener interface {
 
 	// ExitInteger is called when exiting the integer production.
 	ExitInteger(c *IntegerContext)
+
+	// ExitNth is called when exiting the nth production.
+	ExitNth(c *NthContext)
 
 	// ExitName_term is called when exiting the name_term production.
 	ExitName_term(c *Name_termContext)

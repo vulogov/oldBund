@@ -33,6 +33,12 @@ func (s *BaseBundListener) EnterTerm(ctx *TermContext) {}
 // ExitTerm is called when production term is exited.
 func (s *BaseBundListener) ExitTerm(ctx *TermContext) {}
 
+// EnterPvalue is called when production pvalue is entered.
+func (s *BaseBundListener) EnterPvalue(ctx *PvalueContext) {}
+
+// ExitPvalue is called when production pvalue is exited.
+func (s *BaseBundListener) ExitPvalue(ctx *PvalueContext) {}
+
 // EnterTrue_term is called when production true_term is entered.
 func (s *BaseBundListener) EnterTrue_term(ctx *True_termContext) {}
 
@@ -80,6 +86,12 @@ func (s *BaseBundListener) EnterInteger(ctx *IntegerContext) {}
 
 // ExitInteger is called when production integer is exited.
 func (s *BaseBundListener) ExitInteger(ctx *IntegerContext) {}
+
+// EnterNth is called when production nth is entered.
+func (s *BaseBundListener) EnterNth(ctx *NthContext) {}
+
+// ExitNth is called when production nth is exited.
+func (s *BaseBundListener) ExitNth(ctx *NthContext) {}
 
 // EnterName_term is called when production name_term is entered.
 func (s *BaseBundListener) EnterName_term(ctx *Name_termContext) {}
