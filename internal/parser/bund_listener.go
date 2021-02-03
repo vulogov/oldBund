@@ -47,6 +47,9 @@ type BundListener interface {
 	// EnterName_term is called when entering the name_term production.
 	EnterName_term(c *Name_termContext)
 
+	// EnterSys_name_term is called when entering the sys_name_term production.
+	EnterSys_name_term(c *Sys_name_termContext)
+
 	// EnterDuplicate_term is called when entering the duplicate_term production.
 	EnterDuplicate_term(c *Duplicate_termContext)
 
@@ -68,8 +71,14 @@ type BundListener interface {
 	// EnterDirective is called when entering the directive production.
 	EnterDirective(c *DirectiveContext)
 
+	// EnterSys_directive is called when entering the sys_directive production.
+	EnterSys_directive(c *Sys_directiveContext)
+
 	// EnterCmd is called when entering the cmd production.
 	EnterCmd(c *CmdContext)
+
+	// EnterSys_cmd is called when entering the sys_cmd production.
+	EnterSys_cmd(c *Sys_cmdContext)
 
 	// EnterLambda is called when entering the lambda production.
 	EnterLambda(c *LambdaContext)
@@ -113,6 +122,9 @@ type BundListener interface {
 	// ExitName_term is called when exiting the name_term production.
 	ExitName_term(c *Name_termContext)
 
+	// ExitSys_name_term is called when exiting the sys_name_term production.
+	ExitSys_name_term(c *Sys_name_termContext)
+
 	// ExitDuplicate_term is called when exiting the duplicate_term production.
 	ExitDuplicate_term(c *Duplicate_termContext)
 
@@ -134,8 +146,14 @@ type BundListener interface {
 	// ExitDirective is called when exiting the directive production.
 	ExitDirective(c *DirectiveContext)
 
+	// ExitSys_directive is called when exiting the sys_directive production.
+	ExitSys_directive(c *Sys_directiveContext)
+
 	// ExitCmd is called when exiting the cmd production.
 	ExitCmd(c *CmdContext)
+
+	// ExitSys_cmd is called when exiting the sys_cmd production.
+	ExitSys_cmd(c *Sys_cmdContext)
 
 	// ExitLambda is called when exiting the lambda production.
 	ExitLambda(c *LambdaContext)

@@ -8,5 +8,5 @@ import (
 
 func Init() {
 	blog.Init()
-	log.Info("[ theBund ] has been initiated")
+	log.Debug("[ theBund ] has been initiated")
 }

@@ -46,15 +46,24 @@ func (l *bundListener) ExitNth(c *parser.NthContext) {
 }
 
 func (l *bundListener) ExitDirective(c *parser.DirectiveContext) {
-	fmt.Printf("directive: %s \n", c.GetText())
+	fmt.Printf("directive: %v %v \n", c.GetOp().GetText(), c.GetName().GetText())
+}
+func (l *bundListener) ExitSys_directive(c *parser.Sys_directiveContext) {
+	fmt.Printf("SYS directive: %v %v %v \n", c.GetSys().GetText(), c.GetOp().GetText(), c.GetName().GetText())
 }
 
 func (l *bundListener) ExitCmd(c *parser.CmdContext) {
 	fmt.Printf("command: %s \n", c.GetText())
 }
+func (l *bundListener) ExitSys_cmd(c *parser.Sys_cmdContext) {
+	fmt.Printf("SYS command: %v = %v \n", c.GetSys().GetText(), c.GetCommand().GetText())
+}
 
 func (l *bundListener) ExitName_term(c *parser.Name_termContext) {
 	fmt.Printf("name: %s \n", c.GetText())
+}
+func (l *bundListener) ExitSys_name_term(c *parser.Sys_name_termContext) {
+	fmt.Printf("SYS name: %v %v \n", c.GetSys().GetText(), c.GetValue().GetText())
 }
 
 func (l *bundListener) ExitLambda(c *parser.LambdaContext) {

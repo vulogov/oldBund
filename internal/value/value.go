@@ -17,6 +17,7 @@ const (
 	NAME    = 7
 	OP      = 8
 	CMD     = 9
+	NTH     = 10
 )
 
 type VALUE struct {
@@ -88,36 +89,41 @@ func MakeBool(value string) (*VALUE, error) {
 	return ret, nil
 }
 
-func create(value interface{}, _type int8) *VALUE {
-	ret := new(VALUE)
+func create(value interface{}, _type int8) (ret *VALUE, err error) {
+	ret = new(VALUE)
 	ret.value = value
 	ret.vtype = _type
-	return ret
+	return
 }
 
-func Pair(key string, value interface{}) *VALUE {
+func Pair(key string, value interface{}) (res *VALUE, err error) {
 	p := new(P)
 	p.key = key
-	p.pval = value
-	return create(value, PAIR)
+	p.pval = New(value)
+	res, err = create(p, PAIR)
+	return
 }
 
-func Block(value interface{}) *VALUE {
+func Block(value interface{}) (*VALUE, error) {
 	return create(value, BLOCK)
 }
 
-func MakeBlock() *VALUE {
+func MakeBlock() (*VALUE, error) {
 	return Block(new(deque.Deque))
 }
 
-func Name(value interface{}) *VALUE {
+func Name(value interface{}) (*VALUE, error) {
 	return create(value, NAME)
 }
 
-func Op(value interface{}) *VALUE {
+func Op(value interface{}) (*VALUE, error) {
 	return create(value, OP)
 }
 
-func Cmd(value interface{}) *VALUE {
+func Cmd(value interface{}) (*VALUE, error) {
 	return create(value, CMD)
+}
+
+func MakeNth(value string) (res *VALUE, err error) {
+	return
 }

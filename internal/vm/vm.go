@@ -64,7 +64,8 @@ func (v *VM) Block() {
 		for v.block.Len() > 0 {
 			block.PushBack(v.block.PopFront())
 		}
-		v.Put(*value.Block(block))
+		bvalue, _ := value.Block(block)
+		v.Put(*bvalue)
 		v.isBlock = false
 	}
 }

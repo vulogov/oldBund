@@ -15,6 +15,7 @@ expressions
     | false_term
     | true_term
     | name_term
+    | sys_name_term
     | duplicate_term
     | drop_term
     | begin
@@ -22,7 +23,9 @@ expressions
     | pair
     | block
     | directive
+    | sys_directive
     | cmd
+    | sys_cmd
     | lambda )*
   ;
 
@@ -54,6 +57,7 @@ nth:          value=NTH ;
 // Name term
 //
 name_term:    value=NAME ;
+sys_name_term: sys=SYS value=NAME ;
 //
 // Stack management terms
 //
@@ -73,10 +77,18 @@ pair
 directive
   : op=DIR name=NAME
   ;
+sys_directive
+  : sys=SYS op=DIR name=NAME
+  ;
 
 cmd
   : command=CMD
   ;
+sys_cmd
+  : sys=SYS command=CMD
+  ;
+
+
 
 lambda
   : '[' name=NAME ']' (body+=term)* '.'
@@ -104,7 +116,7 @@ BIN_INTEGER
   ;
 
 NTH
-  : '#' DECIMAL_INTEGER
+  : DECIMAL_INTEGER '#'
   ;
 
 FLOAT_NUMBER
@@ -138,12 +150,16 @@ TOBEGIN: ':' ;
 TOEND:   ';' ;
 SLASH:   '/' ;
 
+SYS
+  : ('@'|'*'|'$'|'`'|'?'|'!')+
+  ;
+
 DIR
-  : ('@'|'%'|'*'|'`'|'~'|'$')+
+  : ('%'|'~')+
   ;
 
 CMD
-  : ('+'|'-'|'&'|'='|','|'$'|'<'|'>')+
+  : ('+'|'-'|'&'|'='|','|'<'|'>')+
   ;
 
 DUPLICATE

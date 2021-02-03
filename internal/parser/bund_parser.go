@@ -16,96 +16,104 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 27, 163,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 28, 182,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
 	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
 	18, 4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 4, 22, 9, 22, 4, 23, 9, 23,
+	4, 24, 9, 24, 4, 25, 9, 25, 4, 26, 9, 26, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2,
 	3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2,
-	3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 7, 2, 66, 10, 2, 12, 2, 14, 2,
-	69, 11, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 89, 10, 3, 3, 4,
-	3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 5, 4,
-	103, 10, 4, 3, 5, 3, 5, 3, 6, 3, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 9, 3, 9,
-	3, 10, 3, 10, 3, 11, 3, 11, 3, 12, 3, 12, 3, 13, 3, 13, 3, 14, 3, 14, 3,
-	15, 3, 15, 3, 16, 3, 16, 3, 17, 3, 17, 3, 18, 3, 18, 3, 19, 3, 19, 7, 19,
-	135, 10, 19, 12, 19, 14, 19, 138, 11, 19, 3, 19, 3, 19, 3, 20, 3, 20, 3,
-	20, 3, 20, 3, 20, 3, 21, 3, 21, 3, 21, 3, 22, 3, 22, 3, 23, 3, 23, 3, 23,
-	3, 23, 7, 23, 156, 10, 23, 12, 23, 14, 23, 159, 11, 23, 3, 23, 3, 23, 3,
-	23, 2, 2, 24, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32,
-	34, 36, 38, 40, 42, 44, 2, 2, 2, 189, 2, 67, 3, 2, 2, 2, 4, 88, 3, 2, 2,
-	2, 6, 102, 3, 2, 2, 2, 8, 104, 3, 2, 2, 2, 10, 106, 3, 2, 2, 2, 12, 108,
-	3, 2, 2, 2, 14, 110, 3, 2, 2, 2, 16, 112, 3, 2, 2, 2, 18, 114, 3, 2, 2,
-	2, 20, 116, 3, 2, 2, 2, 22, 118, 3, 2, 2, 2, 24, 120, 3, 2, 2, 2, 26, 122,
-	3, 2, 2, 2, 28, 124, 3, 2, 2, 2, 30, 126, 3, 2, 2, 2, 32, 128, 3, 2, 2,
-	2, 34, 130, 3, 2, 2, 2, 36, 132, 3, 2, 2, 2, 38, 141, 3, 2, 2, 2, 40, 146,
-	3, 2, 2, 2, 42, 149, 3, 2, 2, 2, 44, 151, 3, 2, 2, 2, 46, 66, 5, 22, 12,
-	2, 47, 66, 5, 24, 13, 2, 48, 66, 5, 20, 11, 2, 49, 66, 5, 18, 10, 2, 50,
-	66, 5, 16, 9, 2, 51, 66, 5, 14, 8, 2, 52, 66, 5, 12, 7, 2, 53, 66, 5, 10,
-	6, 2, 54, 66, 5, 8, 5, 2, 55, 66, 5, 26, 14, 2, 56, 66, 5, 28, 15, 2, 57,
-	66, 5, 30, 16, 2, 58, 66, 5, 32, 17, 2, 59, 66, 5, 34, 18, 2, 60, 66, 5,
-	38, 20, 2, 61, 66, 5, 36, 19, 2, 62, 66, 5, 40, 21, 2, 63, 66, 5, 42, 22,
-	2, 64, 66, 5, 44, 23, 2, 65, 46, 3, 2, 2, 2, 65, 47, 3, 2, 2, 2, 65, 48,
-	3, 2, 2, 2, 65, 49, 3, 2, 2, 2, 65, 50, 3, 2, 2, 2, 65, 51, 3, 2, 2, 2,
-	65, 52, 3, 2, 2, 2, 65, 53, 3, 2, 2, 2, 65, 54, 3, 2, 2, 2, 65, 55, 3,
-	2, 2, 2, 65, 56, 3, 2, 2, 2, 65, 57, 3, 2, 2, 2, 65, 58, 3, 2, 2, 2, 65,
-	59, 3, 2, 2, 2, 65, 60, 3, 2, 2, 2, 65, 61, 3, 2, 2, 2, 65, 62, 3, 2, 2,
-	2, 65, 63, 3, 2, 2, 2, 65, 64, 3, 2, 2, 2, 66, 69, 3, 2, 2, 2, 67, 65,
-	3, 2, 2, 2, 67, 68, 3, 2, 2, 2, 68, 3, 3, 2, 2, 2, 69, 67, 3, 2, 2, 2,
-	70, 89, 5, 24, 13, 2, 71, 89, 5, 22, 12, 2, 72, 89, 5, 20, 11, 2, 73, 89,
-	5, 18, 10, 2, 74, 89, 5, 16, 9, 2, 75, 89, 5, 14, 8, 2, 76, 89, 5, 12,
-	7, 2, 77, 89, 5, 10, 6, 2, 78, 89, 5, 8, 5, 2, 79, 89, 5, 26, 14, 2, 80,
-	89, 5, 28, 15, 2, 81, 89, 5, 30, 16, 2, 82, 89, 5, 32, 17, 2, 83, 89, 5,
-	34, 18, 2, 84, 89, 5, 38, 20, 2, 85, 89, 5, 36, 19, 2, 86, 89, 5, 40, 21,
-	2, 87, 89, 5, 42, 22, 2, 88, 70, 3, 2, 2, 2, 88, 71, 3, 2, 2, 2, 88, 72,
-	3, 2, 2, 2, 88, 73, 3, 2, 2, 2, 88, 74, 3, 2, 2, 2, 88, 75, 3, 2, 2, 2,
-	88, 76, 3, 2, 2, 2, 88, 77, 3, 2, 2, 2, 88, 78, 3, 2, 2, 2, 88, 79, 3,
-	2, 2, 2, 88, 80, 3, 2, 2, 2, 88, 81, 3, 2, 2, 2, 88, 82, 3, 2, 2, 2, 88,
-	83, 3, 2, 2, 2, 88, 84, 3, 2, 2, 2, 88, 85, 3, 2, 2, 2, 88, 86, 3, 2, 2,
-	2, 88, 87, 3, 2, 2, 2, 89, 5, 3, 2, 2, 2, 90, 103, 5, 22, 12, 2, 91, 103,
-	5, 24, 13, 2, 92, 103, 5, 20, 11, 2, 93, 103, 5, 18, 10, 2, 94, 103, 5,
-	16, 9, 2, 95, 103, 5, 14, 8, 2, 96, 103, 5, 12, 7, 2, 97, 103, 5, 10, 6,
-	2, 98, 103, 5, 8, 5, 2, 99, 103, 5, 26, 14, 2, 100, 103, 5, 40, 21, 2,
-	101, 103, 5, 42, 22, 2, 102, 90, 3, 2, 2, 2, 102, 91, 3, 2, 2, 2, 102,
-	92, 3, 2, 2, 2, 102, 93, 3, 2, 2, 2, 102, 94, 3, 2, 2, 2, 102, 95, 3, 2,
-	2, 2, 102, 96, 3, 2, 2, 2, 102, 97, 3, 2, 2, 2, 102, 98, 3, 2, 2, 2, 102,
-	99, 3, 2, 2, 2, 102, 100, 3, 2, 2, 2, 102, 101, 3, 2, 2, 2, 103, 7, 3,
-	2, 2, 2, 104, 105, 7, 17, 2, 2, 105, 9, 3, 2, 2, 2, 106, 107, 7, 18, 2,
-	2, 107, 11, 3, 2, 2, 2, 108, 109, 7, 16, 2, 2, 109, 13, 3, 2, 2, 2, 110,
-	111, 7, 15, 2, 2, 111, 15, 3, 2, 2, 2, 112, 113, 7, 13, 2, 2, 113, 17,
-	3, 2, 2, 2, 114, 115, 7, 12, 2, 2, 115, 19, 3, 2, 2, 2, 116, 117, 7, 11,
-	2, 2, 117, 21, 3, 2, 2, 2, 118, 119, 7, 9, 2, 2, 119, 23, 3, 2, 2, 2, 120,
-	121, 7, 14, 2, 2, 121, 25, 3, 2, 2, 2, 122, 123, 7, 19, 2, 2, 123, 27,
-	3, 2, 2, 2, 124, 125, 7, 25, 2, 2, 125, 29, 3, 2, 2, 2, 126, 127, 7, 26,
-	2, 2, 127, 31, 3, 2, 2, 2, 128, 129, 7, 20, 2, 2, 129, 33, 3, 2, 2, 2,
-	130, 131, 7, 21, 2, 2, 131, 35, 3, 2, 2, 2, 132, 136, 7, 3, 2, 2, 133,
-	135, 5, 4, 3, 2, 134, 133, 3, 2, 2, 2, 135, 138, 3, 2, 2, 2, 136, 134,
-	3, 2, 2, 2, 136, 137, 3, 2, 2, 2, 137, 139, 3, 2, 2, 2, 138, 136, 3, 2,
-	2, 2, 139, 140, 7, 3, 2, 2, 140, 37, 3, 2, 2, 2, 141, 142, 7, 4, 2, 2,
-	142, 143, 5, 26, 14, 2, 143, 144, 5, 6, 4, 2, 144, 145, 7, 5, 2, 2, 145,
-	39, 3, 2, 2, 2, 146, 147, 7, 23, 2, 2, 147, 148, 7, 19, 2, 2, 148, 41,
-	3, 2, 2, 2, 149, 150, 7, 24, 2, 2, 150, 43, 3, 2, 2, 2, 151, 152, 7, 6,
-	2, 2, 152, 153, 7, 19, 2, 2, 153, 157, 7, 7, 2, 2, 154, 156, 5, 4, 3, 2,
-	155, 154, 3, 2, 2, 2, 156, 159, 3, 2, 2, 2, 157, 155, 3, 2, 2, 2, 157,
-	158, 3, 2, 2, 2, 158, 160, 3, 2, 2, 2, 159, 157, 3, 2, 2, 2, 160, 161,
-	7, 8, 2, 2, 161, 45, 3, 2, 2, 2, 8, 65, 67, 88, 102, 136, 157,
+	3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 7, 2, 75, 10, 2, 12, 2, 14, 2, 78, 11, 2,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 98, 10, 3, 3, 4, 3, 4, 3, 4,
+	3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 5, 4, 112, 10, 4,
+	3, 5, 3, 5, 3, 6, 3, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 9, 3, 9, 3, 10, 3, 10,
+	3, 11, 3, 11, 3, 12, 3, 12, 3, 13, 3, 13, 3, 14, 3, 14, 3, 15, 3, 15, 3,
+	15, 3, 16, 3, 16, 3, 17, 3, 17, 3, 18, 3, 18, 3, 19, 3, 19, 3, 20, 3, 20,
+	7, 20, 147, 10, 20, 12, 20, 14, 20, 150, 11, 20, 3, 20, 3, 20, 3, 21, 3,
+	21, 3, 21, 3, 21, 3, 21, 3, 22, 3, 22, 3, 22, 3, 23, 3, 23, 3, 23, 3, 23,
+	3, 24, 3, 24, 3, 25, 3, 25, 3, 25, 3, 26, 3, 26, 3, 26, 3, 26, 7, 26, 175,
+	10, 26, 12, 26, 14, 26, 178, 11, 26, 3, 26, 3, 26, 3, 26, 2, 2, 27, 2,
+	4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
+	42, 44, 46, 48, 50, 2, 2, 2, 208, 2, 76, 3, 2, 2, 2, 4, 97, 3, 2, 2, 2,
+	6, 111, 3, 2, 2, 2, 8, 113, 3, 2, 2, 2, 10, 115, 3, 2, 2, 2, 12, 117, 3,
+	2, 2, 2, 14, 119, 3, 2, 2, 2, 16, 121, 3, 2, 2, 2, 18, 123, 3, 2, 2, 2,
+	20, 125, 3, 2, 2, 2, 22, 127, 3, 2, 2, 2, 24, 129, 3, 2, 2, 2, 26, 131,
+	3, 2, 2, 2, 28, 133, 3, 2, 2, 2, 30, 136, 3, 2, 2, 2, 32, 138, 3, 2, 2,
+	2, 34, 140, 3, 2, 2, 2, 36, 142, 3, 2, 2, 2, 38, 144, 3, 2, 2, 2, 40, 153,
+	3, 2, 2, 2, 42, 158, 3, 2, 2, 2, 44, 161, 3, 2, 2, 2, 46, 165, 3, 2, 2,
+	2, 48, 167, 3, 2, 2, 2, 50, 170, 3, 2, 2, 2, 52, 75, 5, 22, 12, 2, 53,
+	75, 5, 24, 13, 2, 54, 75, 5, 20, 11, 2, 55, 75, 5, 18, 10, 2, 56, 75, 5,
+	16, 9, 2, 57, 75, 5, 14, 8, 2, 58, 75, 5, 12, 7, 2, 59, 75, 5, 10, 6, 2,
+	60, 75, 5, 8, 5, 2, 61, 75, 5, 26, 14, 2, 62, 75, 5, 28, 15, 2, 63, 75,
+	5, 30, 16, 2, 64, 75, 5, 32, 17, 2, 65, 75, 5, 34, 18, 2, 66, 75, 5, 36,
+	19, 2, 67, 75, 5, 40, 21, 2, 68, 75, 5, 38, 20, 2, 69, 75, 5, 42, 22, 2,
+	70, 75, 5, 44, 23, 2, 71, 75, 5, 46, 24, 2, 72, 75, 5, 48, 25, 2, 73, 75,
+	5, 50, 26, 2, 74, 52, 3, 2, 2, 2, 74, 53, 3, 2, 2, 2, 74, 54, 3, 2, 2,
+	2, 74, 55, 3, 2, 2, 2, 74, 56, 3, 2, 2, 2, 74, 57, 3, 2, 2, 2, 74, 58,
+	3, 2, 2, 2, 74, 59, 3, 2, 2, 2, 74, 60, 3, 2, 2, 2, 74, 61, 3, 2, 2, 2,
+	74, 62, 3, 2, 2, 2, 74, 63, 3, 2, 2, 2, 74, 64, 3, 2, 2, 2, 74, 65, 3,
+	2, 2, 2, 74, 66, 3, 2, 2, 2, 74, 67, 3, 2, 2, 2, 74, 68, 3, 2, 2, 2, 74,
+	69, 3, 2, 2, 2, 74, 70, 3, 2, 2, 2, 74, 71, 3, 2, 2, 2, 74, 72, 3, 2, 2,
+	2, 74, 73, 3, 2, 2, 2, 75, 78, 3, 2, 2, 2, 76, 74, 3, 2, 2, 2, 76, 77,
+	3, 2, 2, 2, 77, 3, 3, 2, 2, 2, 78, 76, 3, 2, 2, 2, 79, 98, 5, 24, 13, 2,
+	80, 98, 5, 22, 12, 2, 81, 98, 5, 20, 11, 2, 82, 98, 5, 18, 10, 2, 83, 98,
+	5, 16, 9, 2, 84, 98, 5, 14, 8, 2, 85, 98, 5, 12, 7, 2, 86, 98, 5, 10, 6,
+	2, 87, 98, 5, 8, 5, 2, 88, 98, 5, 26, 14, 2, 89, 98, 5, 30, 16, 2, 90,
+	98, 5, 32, 17, 2, 91, 98, 5, 34, 18, 2, 92, 98, 5, 36, 19, 2, 93, 98, 5,
+	40, 21, 2, 94, 98, 5, 38, 20, 2, 95, 98, 5, 42, 22, 2, 96, 98, 5, 46, 24,
+	2, 97, 79, 3, 2, 2, 2, 97, 80, 3, 2, 2, 2, 97, 81, 3, 2, 2, 2, 97, 82,
+	3, 2, 2, 2, 97, 83, 3, 2, 2, 2, 97, 84, 3, 2, 2, 2, 97, 85, 3, 2, 2, 2,
+	97, 86, 3, 2, 2, 2, 97, 87, 3, 2, 2, 2, 97, 88, 3, 2, 2, 2, 97, 89, 3,
+	2, 2, 2, 97, 90, 3, 2, 2, 2, 97, 91, 3, 2, 2, 2, 97, 92, 3, 2, 2, 2, 97,
+	93, 3, 2, 2, 2, 97, 94, 3, 2, 2, 2, 97, 95, 3, 2, 2, 2, 97, 96, 3, 2, 2,
+	2, 98, 5, 3, 2, 2, 2, 99, 112, 5, 22, 12, 2, 100, 112, 5, 24, 13, 2, 101,
+	112, 5, 20, 11, 2, 102, 112, 5, 18, 10, 2, 103, 112, 5, 16, 9, 2, 104,
+	112, 5, 14, 8, 2, 105, 112, 5, 12, 7, 2, 106, 112, 5, 10, 6, 2, 107, 112,
+	5, 8, 5, 2, 108, 112, 5, 26, 14, 2, 109, 112, 5, 42, 22, 2, 110, 112, 5,
+	46, 24, 2, 111, 99, 3, 2, 2, 2, 111, 100, 3, 2, 2, 2, 111, 101, 3, 2, 2,
+	2, 111, 102, 3, 2, 2, 2, 111, 103, 3, 2, 2, 2, 111, 104, 3, 2, 2, 2, 111,
+	105, 3, 2, 2, 2, 111, 106, 3, 2, 2, 2, 111, 107, 3, 2, 2, 2, 111, 108,
+	3, 2, 2, 2, 111, 109, 3, 2, 2, 2, 111, 110, 3, 2, 2, 2, 112, 7, 3, 2, 2,
+	2, 113, 114, 7, 17, 2, 2, 114, 9, 3, 2, 2, 2, 115, 116, 7, 18, 2, 2, 116,
+	11, 3, 2, 2, 2, 117, 118, 7, 16, 2, 2, 118, 13, 3, 2, 2, 2, 119, 120, 7,
+	15, 2, 2, 120, 15, 3, 2, 2, 2, 121, 122, 7, 13, 2, 2, 122, 17, 3, 2, 2,
+	2, 123, 124, 7, 12, 2, 2, 124, 19, 3, 2, 2, 2, 125, 126, 7, 11, 2, 2, 126,
+	21, 3, 2, 2, 2, 127, 128, 7, 9, 2, 2, 128, 23, 3, 2, 2, 2, 129, 130, 7,
+	14, 2, 2, 130, 25, 3, 2, 2, 2, 131, 132, 7, 19, 2, 2, 132, 27, 3, 2, 2,
+	2, 133, 134, 7, 23, 2, 2, 134, 135, 7, 19, 2, 2, 135, 29, 3, 2, 2, 2, 136,
+	137, 7, 26, 2, 2, 137, 31, 3, 2, 2, 2, 138, 139, 7, 27, 2, 2, 139, 33,
+	3, 2, 2, 2, 140, 141, 7, 20, 2, 2, 141, 35, 3, 2, 2, 2, 142, 143, 7, 21,
+	2, 2, 143, 37, 3, 2, 2, 2, 144, 148, 7, 3, 2, 2, 145, 147, 5, 4, 3, 2,
+	146, 145, 3, 2, 2, 2, 147, 150, 3, 2, 2, 2, 148, 146, 3, 2, 2, 2, 148,
+	149, 3, 2, 2, 2, 149, 151, 3, 2, 2, 2, 150, 148, 3, 2, 2, 2, 151, 152,
+	7, 3, 2, 2, 152, 39, 3, 2, 2, 2, 153, 154, 7, 4, 2, 2, 154, 155, 5, 26,
+	14, 2, 155, 156, 5, 6, 4, 2, 156, 157, 7, 5, 2, 2, 157, 41, 3, 2, 2, 2,
+	158, 159, 7, 24, 2, 2, 159, 160, 7, 19, 2, 2, 160, 43, 3, 2, 2, 2, 161,
+	162, 7, 23, 2, 2, 162, 163, 7, 24, 2, 2, 163, 164, 7, 19, 2, 2, 164, 45,
+	3, 2, 2, 2, 165, 166, 7, 25, 2, 2, 166, 47, 3, 2, 2, 2, 167, 168, 7, 23,
+	2, 2, 168, 169, 7, 25, 2, 2, 169, 49, 3, 2, 2, 2, 170, 171, 7, 6, 2, 2,
+	171, 172, 7, 19, 2, 2, 172, 176, 7, 7, 2, 2, 173, 175, 5, 4, 3, 2, 174,
+	173, 3, 2, 2, 2, 175, 178, 3, 2, 2, 2, 176, 174, 3, 2, 2, 2, 176, 177,
+	3, 2, 2, 2, 177, 179, 3, 2, 2, 2, 178, 176, 3, 2, 2, 2, 179, 180, 7, 8,
+	2, 2, 180, 51, 3, 2, 2, 2, 8, 74, 76, 97, 111, 148, 176,
 }
 var literalNames = []string{
 	"", "'|'", "'{'", "'}'", "'['", "']'", "'.'", "", "", "", "", "", "", "",
-	"", "", "", "", "':'", "';'", "'/'", "", "", "'^'", "'_'",
+	"", "", "", "", "':'", "';'", "'/'", "", "", "", "'^'", "'_'",
 }
 var symbolicNames = []string{
 	"", "", "", "", "", "", "", "INTEGER", "DECIMAL_INTEGER", "OCT_INTEGER",
 	"HEX_INTEGER", "BIN_INTEGER", "NTH", "FLOAT_NUMBER", "STRING", "TRUE",
-	"FALSE", "NAME", "TOBEGIN", "TOEND", "SLASH", "DIR", "CMD", "DUPLICATE",
+	"FALSE", "NAME", "TOBEGIN", "TOEND", "SLASH", "SYS", "DIR", "CMD", "DUPLICATE",
 	"DROP", "SKIP_",
 }
 
 var ruleNames = []string{
 	"expressions", "term", "pvalue", "true_term", "false_term", "string_term",
 	"float_term", "bin_integer", "hex_integer", "oct_integer", "integer", "nth",
-	"name_term", "duplicate_term", "drop_term", "begin", "end", "block", "pair",
-	"directive", "cmd", "lambda",
+	"name_term", "sys_name_term", "duplicate_term", "drop_term", "begin", "end",
+	"block", "pair", "directive", "sys_directive", "cmd", "sys_cmd", "lambda",
 }
 
 type BundParser struct {
@@ -160,11 +168,12 @@ const (
 	BundParserTOBEGIN         = 18
 	BundParserTOEND           = 19
 	BundParserSLASH           = 20
-	BundParserDIR             = 21
-	BundParserCMD             = 22
-	BundParserDUPLICATE       = 23
-	BundParserDROP            = 24
-	BundParserSKIP_           = 25
+	BundParserSYS             = 21
+	BundParserDIR             = 22
+	BundParserCMD             = 23
+	BundParserDUPLICATE       = 24
+	BundParserDROP            = 25
+	BundParserSKIP_           = 26
 )
 
 // BundParser rules.
@@ -182,15 +191,18 @@ const (
 	BundParserRULE_integer        = 10
 	BundParserRULE_nth            = 11
 	BundParserRULE_name_term      = 12
-	BundParserRULE_duplicate_term = 13
-	BundParserRULE_drop_term      = 14
-	BundParserRULE_begin          = 15
-	BundParserRULE_end            = 16
-	BundParserRULE_block          = 17
-	BundParserRULE_pair           = 18
-	BundParserRULE_directive      = 19
-	BundParserRULE_cmd            = 20
-	BundParserRULE_lambda         = 21
+	BundParserRULE_sys_name_term  = 13
+	BundParserRULE_duplicate_term = 14
+	BundParserRULE_drop_term      = 15
+	BundParserRULE_begin          = 16
+	BundParserRULE_end            = 17
+	BundParserRULE_block          = 18
+	BundParserRULE_pair           = 19
+	BundParserRULE_directive      = 20
+	BundParserRULE_sys_directive  = 21
+	BundParserRULE_cmd            = 22
+	BundParserRULE_sys_cmd        = 23
+	BundParserRULE_lambda         = 24
 )
 
 // IExpressionsContext is an interface to support dynamic dispatch.
@@ -461,6 +473,29 @@ func (s *ExpressionsContext) Name_term(i int) IName_termContext {
 	return t.(IName_termContext)
 }
 
+func (s *ExpressionsContext) AllSys_name_term() []ISys_name_termContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISys_name_termContext)(nil)).Elem())
+	var tst = make([]ISys_name_termContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(ISys_name_termContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *ExpressionsContext) Sys_name_term(i int) ISys_name_termContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISys_name_termContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ISys_name_termContext)
+}
+
 func (s *ExpressionsContext) AllDuplicate_term() []IDuplicate_termContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IDuplicate_termContext)(nil)).Elem())
 	var tst = make([]IDuplicate_termContext, len(ts))
@@ -622,6 +657,29 @@ func (s *ExpressionsContext) Directive(i int) IDirectiveContext {
 	return t.(IDirectiveContext)
 }
 
+func (s *ExpressionsContext) AllSys_directive() []ISys_directiveContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISys_directiveContext)(nil)).Elem())
+	var tst = make([]ISys_directiveContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(ISys_directiveContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *ExpressionsContext) Sys_directive(i int) ISys_directiveContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISys_directiveContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ISys_directiveContext)
+}
+
 func (s *ExpressionsContext) AllCmd() []ICmdContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ICmdContext)(nil)).Elem())
 	var tst = make([]ICmdContext, len(ts))
@@ -643,6 +701,29 @@ func (s *ExpressionsContext) Cmd(i int) ICmdContext {
 	}
 
 	return t.(ICmdContext)
+}
+
+func (s *ExpressionsContext) AllSys_cmd() []ISys_cmdContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISys_cmdContext)(nil)).Elem())
+	var tst = make([]ISys_cmdContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(ISys_cmdContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *ExpressionsContext) Sys_cmd(i int) ISys_cmdContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISys_cmdContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ISys_cmdContext)
 }
 
 func (s *ExpressionsContext) AllLambda() []ILambdaContext {
@@ -710,134 +791,149 @@ func (p *BundParser) Expressions() (localctx IExpressionsContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(65)
+	p.SetState(74)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BundParserT__0)|(1<<BundParserT__1)|(1<<BundParserT__3)|(1<<BundParserINTEGER)|(1<<BundParserOCT_INTEGER)|(1<<BundParserHEX_INTEGER)|(1<<BundParserBIN_INTEGER)|(1<<BundParserNTH)|(1<<BundParserFLOAT_NUMBER)|(1<<BundParserSTRING)|(1<<BundParserTRUE)|(1<<BundParserFALSE)|(1<<BundParserNAME)|(1<<BundParserTOBEGIN)|(1<<BundParserTOEND)|(1<<BundParserDIR)|(1<<BundParserCMD)|(1<<BundParserDUPLICATE)|(1<<BundParserDROP))) != 0 {
-		p.SetState(63)
+	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BundParserT__0)|(1<<BundParserT__1)|(1<<BundParserT__3)|(1<<BundParserINTEGER)|(1<<BundParserOCT_INTEGER)|(1<<BundParserHEX_INTEGER)|(1<<BundParserBIN_INTEGER)|(1<<BundParserNTH)|(1<<BundParserFLOAT_NUMBER)|(1<<BundParserSTRING)|(1<<BundParserTRUE)|(1<<BundParserFALSE)|(1<<BundParserNAME)|(1<<BundParserTOBEGIN)|(1<<BundParserTOEND)|(1<<BundParserSYS)|(1<<BundParserDIR)|(1<<BundParserCMD)|(1<<BundParserDUPLICATE)|(1<<BundParserDROP))) != 0 {
+		p.SetState(72)
 		p.GetErrorHandler().Sync(p)
-
-		switch p.GetTokenStream().LA(1) {
-		case BundParserINTEGER:
+		switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 0, p.GetParserRuleContext()) {
+		case 1:
 			{
-				p.SetState(44)
+				p.SetState(50)
 				p.Integer()
 			}
 
-		case BundParserNTH:
+		case 2:
 			{
-				p.SetState(45)
+				p.SetState(51)
 				p.Nth()
 			}
 
-		case BundParserOCT_INTEGER:
+		case 3:
 			{
-				p.SetState(46)
+				p.SetState(52)
 				p.Oct_integer()
 			}
 
-		case BundParserHEX_INTEGER:
+		case 4:
 			{
-				p.SetState(47)
+				p.SetState(53)
 				p.Hex_integer()
 			}
 
-		case BundParserBIN_INTEGER:
+		case 5:
 			{
-				p.SetState(48)
+				p.SetState(54)
 				p.Bin_integer()
 			}
 
-		case BundParserFLOAT_NUMBER:
+		case 6:
 			{
-				p.SetState(49)
+				p.SetState(55)
 				p.Float_term()
 			}
 
-		case BundParserSTRING:
+		case 7:
 			{
-				p.SetState(50)
+				p.SetState(56)
 				p.String_term()
 			}
 
-		case BundParserFALSE:
+		case 8:
 			{
-				p.SetState(51)
+				p.SetState(57)
 				p.False_term()
 			}
 
-		case BundParserTRUE:
+		case 9:
 			{
-				p.SetState(52)
+				p.SetState(58)
 				p.True_term()
 			}
 
-		case BundParserNAME:
+		case 10:
 			{
-				p.SetState(53)
+				p.SetState(59)
 				p.Name_term()
 			}
 
-		case BundParserDUPLICATE:
+		case 11:
 			{
-				p.SetState(54)
+				p.SetState(60)
+				p.Sys_name_term()
+			}
+
+		case 12:
+			{
+				p.SetState(61)
 				p.Duplicate_term()
 			}
 
-		case BundParserDROP:
+		case 13:
 			{
-				p.SetState(55)
+				p.SetState(62)
 				p.Drop_term()
 			}
 
-		case BundParserTOBEGIN:
+		case 14:
 			{
-				p.SetState(56)
+				p.SetState(63)
 				p.Begin()
 			}
 
-		case BundParserTOEND:
+		case 15:
 			{
-				p.SetState(57)
+				p.SetState(64)
 				p.End()
 			}
 
-		case BundParserT__1:
+		case 16:
 			{
-				p.SetState(58)
+				p.SetState(65)
 				p.Pair()
 			}
 
-		case BundParserT__0:
+		case 17:
 			{
-				p.SetState(59)
+				p.SetState(66)
 				p.Block()
 			}
 
-		case BundParserDIR:
+		case 18:
 			{
-				p.SetState(60)
+				p.SetState(67)
 				p.Directive()
 			}
 
-		case BundParserCMD:
+		case 19:
 			{
-				p.SetState(61)
+				p.SetState(68)
+				p.Sys_directive()
+			}
+
+		case 20:
+			{
+				p.SetState(69)
 				p.Cmd()
 			}
 
-		case BundParserT__3:
+		case 21:
 			{
-				p.SetState(62)
+				p.SetState(70)
+				p.Sys_cmd()
+			}
+
+		case 22:
+			{
+				p.SetState(71)
 				p.Lambda()
 			}
 
-		default:
-			panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 		}
 
-		p.SetState(67)
+		p.SetState(76)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -1104,115 +1200,115 @@ func (p *BundParser) Term() (localctx ITermContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(86)
+	p.SetState(95)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case BundParserNTH:
 		{
-			p.SetState(68)
+			p.SetState(77)
 			p.Nth()
 		}
 
 	case BundParserINTEGER:
 		{
-			p.SetState(69)
+			p.SetState(78)
 			p.Integer()
 		}
 
 	case BundParserOCT_INTEGER:
 		{
-			p.SetState(70)
+			p.SetState(79)
 			p.Oct_integer()
 		}
 
 	case BundParserHEX_INTEGER:
 		{
-			p.SetState(71)
+			p.SetState(80)
 			p.Hex_integer()
 		}
 
 	case BundParserBIN_INTEGER:
 		{
-			p.SetState(72)
+			p.SetState(81)
 			p.Bin_integer()
 		}
 
 	case BundParserFLOAT_NUMBER:
 		{
-			p.SetState(73)
+			p.SetState(82)
 			p.Float_term()
 		}
 
 	case BundParserSTRING:
 		{
-			p.SetState(74)
+			p.SetState(83)
 			p.String_term()
 		}
 
 	case BundParserFALSE:
 		{
-			p.SetState(75)
+			p.SetState(84)
 			p.False_term()
 		}
 
 	case BundParserTRUE:
 		{
-			p.SetState(76)
+			p.SetState(85)
 			p.True_term()
 		}
 
 	case BundParserNAME:
 		{
-			p.SetState(77)
+			p.SetState(86)
 			p.Name_term()
 		}
 
 	case BundParserDUPLICATE:
 		{
-			p.SetState(78)
+			p.SetState(87)
 			p.Duplicate_term()
 		}
 
 	case BundParserDROP:
 		{
-			p.SetState(79)
+			p.SetState(88)
 			p.Drop_term()
 		}
 
 	case BundParserTOBEGIN:
 		{
-			p.SetState(80)
+			p.SetState(89)
 			p.Begin()
 		}
 
 	case BundParserTOEND:
 		{
-			p.SetState(81)
+			p.SetState(90)
 			p.End()
 		}
 
 	case BundParserT__1:
 		{
-			p.SetState(82)
+			p.SetState(91)
 			p.Pair()
 		}
 
 	case BundParserT__0:
 		{
-			p.SetState(83)
+			p.SetState(92)
 			p.Block()
 		}
 
 	case BundParserDIR:
 		{
-			p.SetState(84)
+			p.SetState(93)
 			p.Directive()
 		}
 
 	case BundParserCMD:
 		{
-			p.SetState(85)
+			p.SetState(94)
 			p.Cmd()
 		}
 
@@ -1422,79 +1518,79 @@ func (p *BundParser) Pvalue() (localctx IPvalueContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(100)
+	p.SetState(109)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case BundParserINTEGER:
 		{
-			p.SetState(88)
+			p.SetState(97)
 			p.Integer()
 		}
 
 	case BundParserNTH:
 		{
-			p.SetState(89)
+			p.SetState(98)
 			p.Nth()
 		}
 
 	case BundParserOCT_INTEGER:
 		{
-			p.SetState(90)
+			p.SetState(99)
 			p.Oct_integer()
 		}
 
 	case BundParserHEX_INTEGER:
 		{
-			p.SetState(91)
+			p.SetState(100)
 			p.Hex_integer()
 		}
 
 	case BundParserBIN_INTEGER:
 		{
-			p.SetState(92)
+			p.SetState(101)
 			p.Bin_integer()
 		}
 
 	case BundParserFLOAT_NUMBER:
 		{
-			p.SetState(93)
+			p.SetState(102)
 			p.Float_term()
 		}
 
 	case BundParserSTRING:
 		{
-			p.SetState(94)
+			p.SetState(103)
 			p.String_term()
 		}
 
 	case BundParserFALSE:
 		{
-			p.SetState(95)
+			p.SetState(104)
 			p.False_term()
 		}
 
 	case BundParserTRUE:
 		{
-			p.SetState(96)
+			p.SetState(105)
 			p.True_term()
 		}
 
 	case BundParserNAME:
 		{
-			p.SetState(97)
+			p.SetState(106)
 			p.Name_term()
 		}
 
 	case BundParserDIR:
 		{
-			p.SetState(98)
+			p.SetState(107)
 			p.Directive()
 		}
 
 	case BundParserCMD:
 		{
-			p.SetState(99)
+			p.SetState(108)
 			p.Cmd()
 		}
 
@@ -1600,7 +1696,7 @@ func (p *BundParser) True_term() (localctx ITrue_termContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(102)
+		p.SetState(111)
 
 		var _m = p.Match(BundParserTRUE)
 
@@ -1705,7 +1801,7 @@ func (p *BundParser) False_term() (localctx IFalse_termContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(104)
+		p.SetState(113)
 
 		var _m = p.Match(BundParserFALSE)
 
@@ -1810,7 +1906,7 @@ func (p *BundParser) String_term() (localctx IString_termContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(106)
+		p.SetState(115)
 
 		var _m = p.Match(BundParserSTRING)
 
@@ -1915,7 +2011,7 @@ func (p *BundParser) Float_term() (localctx IFloat_termContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(108)
+		p.SetState(117)
 
 		var _m = p.Match(BundParserFLOAT_NUMBER)
 
@@ -2020,7 +2116,7 @@ func (p *BundParser) Bin_integer() (localctx IBin_integerContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(110)
+		p.SetState(119)
 
 		var _m = p.Match(BundParserBIN_INTEGER)
 
@@ -2125,7 +2221,7 @@ func (p *BundParser) Hex_integer() (localctx IHex_integerContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(112)
+		p.SetState(121)
 
 		var _m = p.Match(BundParserHEX_INTEGER)
 
@@ -2230,7 +2326,7 @@ func (p *BundParser) Oct_integer() (localctx IOct_integerContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(114)
+		p.SetState(123)
 
 		var _m = p.Match(BundParserOCT_INTEGER)
 
@@ -2335,7 +2431,7 @@ func (p *BundParser) Integer() (localctx IIntegerContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(116)
+		p.SetState(125)
 
 		var _m = p.Match(BundParserINTEGER)
 
@@ -2440,7 +2536,7 @@ func (p *BundParser) Nth() (localctx INthContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(118)
+		p.SetState(127)
 
 		var _m = p.Match(BundParserNTH)
 
@@ -2545,11 +2641,138 @@ func (p *BundParser) Name_term() (localctx IName_termContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(120)
+		p.SetState(129)
 
 		var _m = p.Match(BundParserNAME)
 
 		localctx.(*Name_termContext).value = _m
+	}
+
+	return localctx
+}
+
+// ISys_name_termContext is an interface to support dynamic dispatch.
+type ISys_name_termContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// GetSys returns the sys token.
+	GetSys() antlr.Token
+
+	// GetValue returns the value token.
+	GetValue() antlr.Token
+
+	// SetSys sets the sys token.
+	SetSys(antlr.Token)
+
+	// SetValue sets the value token.
+	SetValue(antlr.Token)
+
+	// IsSys_name_termContext differentiates from other interfaces.
+	IsSys_name_termContext()
+}
+
+type Sys_name_termContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+	sys    antlr.Token
+	value  antlr.Token
+}
+
+func NewEmptySys_name_termContext() *Sys_name_termContext {
+	var p = new(Sys_name_termContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BundParserRULE_sys_name_term
+	return p
+}
+
+func (*Sys_name_termContext) IsSys_name_termContext() {}
+
+func NewSys_name_termContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Sys_name_termContext {
+	var p = new(Sys_name_termContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BundParserRULE_sys_name_term
+
+	return p
+}
+
+func (s *Sys_name_termContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Sys_name_termContext) GetSys() antlr.Token { return s.sys }
+
+func (s *Sys_name_termContext) GetValue() antlr.Token { return s.value }
+
+func (s *Sys_name_termContext) SetSys(v antlr.Token) { s.sys = v }
+
+func (s *Sys_name_termContext) SetValue(v antlr.Token) { s.value = v }
+
+func (s *Sys_name_termContext) SYS() antlr.TerminalNode {
+	return s.GetToken(BundParserSYS, 0)
+}
+
+func (s *Sys_name_termContext) NAME() antlr.TerminalNode {
+	return s.GetToken(BundParserNAME, 0)
+}
+
+func (s *Sys_name_termContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *Sys_name_termContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *Sys_name_termContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BundListener); ok {
+		listenerT.EnterSys_name_term(s)
+	}
+}
+
+func (s *Sys_name_termContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BundListener); ok {
+		listenerT.ExitSys_name_term(s)
+	}
+}
+
+func (p *BundParser) Sys_name_term() (localctx ISys_name_termContext) {
+	localctx = NewSys_name_termContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 26, BundParserRULE_sys_name_term)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(131)
+
+		var _m = p.Match(BundParserSYS)
+
+		localctx.(*Sys_name_termContext).sys = _m
+	}
+	{
+		p.SetState(132)
+
+		var _m = p.Match(BundParserNAME)
+
+		localctx.(*Sys_name_termContext).value = _m
 	}
 
 	return localctx
@@ -2630,7 +2853,7 @@ func (s *Duplicate_termContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *BundParser) Duplicate_term() (localctx IDuplicate_termContext) {
 	localctx = NewDuplicate_termContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, BundParserRULE_duplicate_term)
+	p.EnterRule(localctx, 28, BundParserRULE_duplicate_term)
 
 	defer func() {
 		p.ExitRule()
@@ -2650,7 +2873,7 @@ func (p *BundParser) Duplicate_term() (localctx IDuplicate_termContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(122)
+		p.SetState(134)
 
 		var _m = p.Match(BundParserDUPLICATE)
 
@@ -2735,7 +2958,7 @@ func (s *Drop_termContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *BundParser) Drop_term() (localctx IDrop_termContext) {
 	localctx = NewDrop_termContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, BundParserRULE_drop_term)
+	p.EnterRule(localctx, 30, BundParserRULE_drop_term)
 
 	defer func() {
 		p.ExitRule()
@@ -2755,7 +2978,7 @@ func (p *BundParser) Drop_term() (localctx IDrop_termContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(124)
+		p.SetState(136)
 
 		var _m = p.Match(BundParserDROP)
 
@@ -2840,7 +3063,7 @@ func (s *BeginContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *BundParser) Begin() (localctx IBeginContext) {
 	localctx = NewBeginContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, BundParserRULE_begin)
+	p.EnterRule(localctx, 32, BundParserRULE_begin)
 
 	defer func() {
 		p.ExitRule()
@@ -2860,7 +3083,7 @@ func (p *BundParser) Begin() (localctx IBeginContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(126)
+		p.SetState(138)
 
 		var _m = p.Match(BundParserTOBEGIN)
 
@@ -2945,7 +3168,7 @@ func (s *EndContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *BundParser) End() (localctx IEndContext) {
 	localctx = NewEndContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, BundParserRULE_end)
+	p.EnterRule(localctx, 34, BundParserRULE_end)
 
 	defer func() {
 		p.ExitRule()
@@ -2965,7 +3188,7 @@ func (p *BundParser) End() (localctx IEndContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(128)
+		p.SetState(140)
 
 		var _m = p.Match(BundParserTOEND)
 
@@ -3080,7 +3303,7 @@ func (s *BlockContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *BundParser) Block() (localctx IBlockContext) {
 	localctx = NewBlockContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 34, BundParserRULE_block)
+	p.EnterRule(localctx, 36, BundParserRULE_block)
 
 	defer func() {
 		p.ExitRule()
@@ -3102,17 +3325,17 @@ func (p *BundParser) Block() (localctx IBlockContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(130)
+		p.SetState(142)
 		p.Match(BundParserT__0)
 	}
-	p.SetState(134)
+	p.SetState(146)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 4, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(131)
+				p.SetState(143)
 
 				var _x = p.Term()
 
@@ -3121,12 +3344,12 @@ func (p *BundParser) Block() (localctx IBlockContext) {
 			localctx.(*BlockContext).values = append(localctx.(*BlockContext).values, localctx.(*BlockContext)._term)
 
 		}
-		p.SetState(136)
+		p.SetState(148)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 4, p.GetParserRuleContext())
 	}
 	{
-		p.SetState(137)
+		p.SetState(149)
 		p.Match(BundParserT__0)
 	}
 
@@ -3235,7 +3458,7 @@ func (s *PairContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *BundParser) Pair() (localctx IPairContext) {
 	localctx = NewPairContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 36, BundParserRULE_pair)
+	p.EnterRule(localctx, 38, BundParserRULE_pair)
 
 	defer func() {
 		p.ExitRule()
@@ -3255,25 +3478,25 @@ func (p *BundParser) Pair() (localctx IPairContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(139)
+		p.SetState(151)
 		p.Match(BundParserT__1)
 	}
 	{
-		p.SetState(140)
+		p.SetState(152)
 
 		var _x = p.Name_term()
 
 		localctx.(*PairContext).head = _x
 	}
 	{
-		p.SetState(141)
+		p.SetState(153)
 
 		var _x = p.Pvalue()
 
 		localctx.(*PairContext).tail = _x
 	}
 	{
-		p.SetState(142)
+		p.SetState(154)
 		p.Match(BundParserT__2)
 	}
 
@@ -3370,7 +3593,7 @@ func (s *DirectiveContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *BundParser) Directive() (localctx IDirectiveContext) {
 	localctx = NewDirectiveContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, BundParserRULE_directive)
+	p.EnterRule(localctx, 40, BundParserRULE_directive)
 
 	defer func() {
 		p.ExitRule()
@@ -3390,18 +3613,167 @@ func (p *BundParser) Directive() (localctx IDirectiveContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(144)
+		p.SetState(156)
 
 		var _m = p.Match(BundParserDIR)
 
 		localctx.(*DirectiveContext).op = _m
 	}
 	{
-		p.SetState(145)
+		p.SetState(157)
 
 		var _m = p.Match(BundParserNAME)
 
 		localctx.(*DirectiveContext).name = _m
+	}
+
+	return localctx
+}
+
+// ISys_directiveContext is an interface to support dynamic dispatch.
+type ISys_directiveContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// GetSys returns the sys token.
+	GetSys() antlr.Token
+
+	// GetOp returns the op token.
+	GetOp() antlr.Token
+
+	// GetName returns the name token.
+	GetName() antlr.Token
+
+	// SetSys sets the sys token.
+	SetSys(antlr.Token)
+
+	// SetOp sets the op token.
+	SetOp(antlr.Token)
+
+	// SetName sets the name token.
+	SetName(antlr.Token)
+
+	// IsSys_directiveContext differentiates from other interfaces.
+	IsSys_directiveContext()
+}
+
+type Sys_directiveContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+	sys    antlr.Token
+	op     antlr.Token
+	name   antlr.Token
+}
+
+func NewEmptySys_directiveContext() *Sys_directiveContext {
+	var p = new(Sys_directiveContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BundParserRULE_sys_directive
+	return p
+}
+
+func (*Sys_directiveContext) IsSys_directiveContext() {}
+
+func NewSys_directiveContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Sys_directiveContext {
+	var p = new(Sys_directiveContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BundParserRULE_sys_directive
+
+	return p
+}
+
+func (s *Sys_directiveContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Sys_directiveContext) GetSys() antlr.Token { return s.sys }
+
+func (s *Sys_directiveContext) GetOp() antlr.Token { return s.op }
+
+func (s *Sys_directiveContext) GetName() antlr.Token { return s.name }
+
+func (s *Sys_directiveContext) SetSys(v antlr.Token) { s.sys = v }
+
+func (s *Sys_directiveContext) SetOp(v antlr.Token) { s.op = v }
+
+func (s *Sys_directiveContext) SetName(v antlr.Token) { s.name = v }
+
+func (s *Sys_directiveContext) SYS() antlr.TerminalNode {
+	return s.GetToken(BundParserSYS, 0)
+}
+
+func (s *Sys_directiveContext) DIR() antlr.TerminalNode {
+	return s.GetToken(BundParserDIR, 0)
+}
+
+func (s *Sys_directiveContext) NAME() antlr.TerminalNode {
+	return s.GetToken(BundParserNAME, 0)
+}
+
+func (s *Sys_directiveContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *Sys_directiveContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *Sys_directiveContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BundListener); ok {
+		listenerT.EnterSys_directive(s)
+	}
+}
+
+func (s *Sys_directiveContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BundListener); ok {
+		listenerT.ExitSys_directive(s)
+	}
+}
+
+func (p *BundParser) Sys_directive() (localctx ISys_directiveContext) {
+	localctx = NewSys_directiveContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 42, BundParserRULE_sys_directive)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(159)
+
+		var _m = p.Match(BundParserSYS)
+
+		localctx.(*Sys_directiveContext).sys = _m
+	}
+	{
+		p.SetState(160)
+
+		var _m = p.Match(BundParserDIR)
+
+		localctx.(*Sys_directiveContext).op = _m
+	}
+	{
+		p.SetState(161)
+
+		var _m = p.Match(BundParserNAME)
+
+		localctx.(*Sys_directiveContext).name = _m
 	}
 
 	return localctx
@@ -3482,7 +3854,7 @@ func (s *CmdContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *BundParser) Cmd() (localctx ICmdContext) {
 	localctx = NewCmdContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 40, BundParserRULE_cmd)
+	p.EnterRule(localctx, 44, BundParserRULE_cmd)
 
 	defer func() {
 		p.ExitRule()
@@ -3502,11 +3874,138 @@ func (p *BundParser) Cmd() (localctx ICmdContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(147)
+		p.SetState(163)
 
 		var _m = p.Match(BundParserCMD)
 
 		localctx.(*CmdContext).command = _m
+	}
+
+	return localctx
+}
+
+// ISys_cmdContext is an interface to support dynamic dispatch.
+type ISys_cmdContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// GetSys returns the sys token.
+	GetSys() antlr.Token
+
+	// GetCommand returns the command token.
+	GetCommand() antlr.Token
+
+	// SetSys sets the sys token.
+	SetSys(antlr.Token)
+
+	// SetCommand sets the command token.
+	SetCommand(antlr.Token)
+
+	// IsSys_cmdContext differentiates from other interfaces.
+	IsSys_cmdContext()
+}
+
+type Sys_cmdContext struct {
+	*antlr.BaseParserRuleContext
+	parser  antlr.Parser
+	sys     antlr.Token
+	command antlr.Token
+}
+
+func NewEmptySys_cmdContext() *Sys_cmdContext {
+	var p = new(Sys_cmdContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BundParserRULE_sys_cmd
+	return p
+}
+
+func (*Sys_cmdContext) IsSys_cmdContext() {}
+
+func NewSys_cmdContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Sys_cmdContext {
+	var p = new(Sys_cmdContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BundParserRULE_sys_cmd
+
+	return p
+}
+
+func (s *Sys_cmdContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Sys_cmdContext) GetSys() antlr.Token { return s.sys }
+
+func (s *Sys_cmdContext) GetCommand() antlr.Token { return s.command }
+
+func (s *Sys_cmdContext) SetSys(v antlr.Token) { s.sys = v }
+
+func (s *Sys_cmdContext) SetCommand(v antlr.Token) { s.command = v }
+
+func (s *Sys_cmdContext) SYS() antlr.TerminalNode {
+	return s.GetToken(BundParserSYS, 0)
+}
+
+func (s *Sys_cmdContext) CMD() antlr.TerminalNode {
+	return s.GetToken(BundParserCMD, 0)
+}
+
+func (s *Sys_cmdContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *Sys_cmdContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *Sys_cmdContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BundListener); ok {
+		listenerT.EnterSys_cmd(s)
+	}
+}
+
+func (s *Sys_cmdContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BundListener); ok {
+		listenerT.ExitSys_cmd(s)
+	}
+}
+
+func (p *BundParser) Sys_cmd() (localctx ISys_cmdContext) {
+	localctx = NewSys_cmdContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 46, BundParserRULE_sys_cmd)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(165)
+
+		var _m = p.Match(BundParserSYS)
+
+		localctx.(*Sys_cmdContext).sys = _m
+	}
+	{
+		p.SetState(166)
+
+		var _m = p.Match(BundParserCMD)
+
+		localctx.(*Sys_cmdContext).command = _m
 	}
 
 	return localctx
@@ -3632,7 +4131,7 @@ func (s *LambdaContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *BundParser) Lambda() (localctx ILambdaContext) {
 	localctx = NewLambdaContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 42, BundParserRULE_lambda)
+	p.EnterRule(localctx, 48, BundParserRULE_lambda)
 	var _la int
 
 	defer func() {
@@ -3653,27 +4152,27 @@ func (p *BundParser) Lambda() (localctx ILambdaContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(149)
+		p.SetState(168)
 		p.Match(BundParserT__3)
 	}
 	{
-		p.SetState(150)
+		p.SetState(169)
 
 		var _m = p.Match(BundParserNAME)
 
 		localctx.(*LambdaContext).name = _m
 	}
 	{
-		p.SetState(151)
+		p.SetState(170)
 		p.Match(BundParserT__4)
 	}
-	p.SetState(155)
+	p.SetState(174)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BundParserT__0)|(1<<BundParserT__1)|(1<<BundParserINTEGER)|(1<<BundParserOCT_INTEGER)|(1<<BundParserHEX_INTEGER)|(1<<BundParserBIN_INTEGER)|(1<<BundParserNTH)|(1<<BundParserFLOAT_NUMBER)|(1<<BundParserSTRING)|(1<<BundParserTRUE)|(1<<BundParserFALSE)|(1<<BundParserNAME)|(1<<BundParserTOBEGIN)|(1<<BundParserTOEND)|(1<<BundParserDIR)|(1<<BundParserCMD)|(1<<BundParserDUPLICATE)|(1<<BundParserDROP))) != 0 {
 		{
-			p.SetState(152)
+			p.SetState(171)
 
 			var _x = p.Term()
 
@@ -3681,12 +4180,12 @@ func (p *BundParser) Lambda() (localctx ILambdaContext) {
 		}
 		localctx.(*LambdaContext).body = append(localctx.(*LambdaContext).body, localctx.(*LambdaContext)._term)
 
-		p.SetState(157)
+		p.SetState(176)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(158)
+		p.SetState(177)
 		p.Match(BundParserT__5)
 	}
 

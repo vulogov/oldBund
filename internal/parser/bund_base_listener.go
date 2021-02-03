@@ -99,6 +99,12 @@ func (s *BaseBundListener) EnterName_term(ctx *Name_termContext) {}
 // ExitName_term is called when production name_term is exited.
 func (s *BaseBundListener) ExitName_term(ctx *Name_termContext) {}
 
+// EnterSys_name_term is called when production sys_name_term is entered.
+func (s *BaseBundListener) EnterSys_name_term(ctx *Sys_name_termContext) {}
+
+// ExitSys_name_term is called when production sys_name_term is exited.
+func (s *BaseBundListener) ExitSys_name_term(ctx *Sys_name_termContext) {}
+
 // EnterDuplicate_term is called when production duplicate_term is entered.
 func (s *BaseBundListener) EnterDuplicate_term(ctx *Duplicate_termContext) {}
 
@@ -141,11 +147,23 @@ func (s *BaseBundListener) EnterDirective(ctx *DirectiveContext) {}
 // ExitDirective is called when production directive is exited.
 func (s *BaseBundListener) ExitDirective(ctx *DirectiveContext) {}
 
+// EnterSys_directive is called when production sys_directive is entered.
+func (s *BaseBundListener) EnterSys_directive(ctx *Sys_directiveContext) {}
+
+// ExitSys_directive is called when production sys_directive is exited.
+func (s *BaseBundListener) ExitSys_directive(ctx *Sys_directiveContext) {}
+
 // EnterCmd is called when production cmd is entered.
 func (s *BaseBundListener) EnterCmd(ctx *CmdContext) {}
 
 // ExitCmd is called when production cmd is exited.
 func (s *BaseBundListener) ExitCmd(ctx *CmdContext) {}
+
+// EnterSys_cmd is called when production sys_cmd is entered.
+func (s *BaseBundListener) EnterSys_cmd(ctx *Sys_cmdContext) {}
+
+// ExitSys_cmd is called when production sys_cmd is exited.
+func (s *BaseBundListener) ExitSys_cmd(ctx *Sys_cmdContext) {}
 
 // EnterLambda is called when production lambda is entered.
 func (s *BaseBundListener) EnterLambda(ctx *LambdaContext) {}
