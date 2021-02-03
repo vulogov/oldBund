@@ -1,7 +1,9 @@
 package value
 
 import (
+	"errors"
 	"strconv"
+	"strings"
 
 	"github.com/gammazero/deque"
 )
@@ -125,5 +127,15 @@ func Cmd(value interface{}) (*VALUE, error) {
 }
 
 func MakeNth(value string) (res *VALUE, err error) {
+	if !strings.HasSuffix(value, "#") {
+		err = errors.New("NTH value have no proper suffix")
+		return
+	}
+	num := strings.TrimSuffix(value, "#")
+	val, err := strconv.ParseInt(num, 0, 64)
+	if err != nil {
+		return
+	}
+	res, err = create(val, NTH)
 	return
 }
