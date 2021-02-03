@@ -2,6 +2,7 @@ package parse
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 
@@ -75,6 +76,30 @@ func (l *bundListener) ExitFalse_term(c *parser.False_termContext) {
 func (l *bundListener) ExitString_term(c *parser.String_termContext) {
 	fmt.Printf("STRING: %v\n", c.GetValue())
 }
+func (l *bundListener) EnterBin_integer(c *parser.Bin_integerContext) {
+	v, err := strconv.ParseInt(c.GetValue().GetText(), 0, 64)
+	if err == nil {
+		fmt.Printf("FROMBIN: %v\n", v)
+	} else {
+		fmt.Printf("FROMBIN Error: %v %v\n", c.GetValue().GetText(), err)
+	}
+}
+func (l *bundListener) EnterHex_integer(c *parser.Hex_integerContext) {
+	v, err := strconv.ParseInt(c.GetValue().GetText(), 0, 64)
+	if err == nil {
+		fmt.Printf("FROMHEX: %v\n", v)
+	} else {
+		fmt.Printf("FROMHEX Error: %v %v\n", c.GetValue().GetText(), err)
+	}
+}
+func (l *bundListener) EnterOct_integer(c *parser.Oct_integerContext) {
+	v, err := strconv.ParseInt(c.GetValue().GetText(), 0, 64)
+	if err == nil {
+		fmt.Printf("FROMOCT: %v\n", v)
+	} else {
+		fmt.Printf("FROMOCT Error: %v %v\n", c.GetValue().GetText(), err)
+	}
+}
 
 func (l *bundListener) ExitBegin(c *parser.BeginContext) {
 	fmt.Printf("WILL PUSH TO BEGIN OF STACK\n")
@@ -84,8 +109,8 @@ func (l *bundListener) ExitEnd(c *parser.EndContext) {
 	fmt.Printf("WILL PUSH TO END OF STACK\n")
 }
 func (l *bundListener) ExitDrop_term(c *parser.Drop_termContext) {
-	fmt.Printf("DROP LAST VALE FROM STACK\n")
+	fmt.Printf("DROP LAST VALUE FROM STACK\n")
 }
 func (l *bundListener) ExitDuplicate_term(c *parser.Duplicate_termContext) {
-	fmt.Printf("DUPLICATE LAST VALE FROM STACK\n")
+	fmt.Printf("DUPLICATE LAST VALUE FROM STACK\n")
 }
