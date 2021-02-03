@@ -93,6 +93,12 @@ func (s *BaseBundListener) EnterNth(ctx *NthContext) {}
 // ExitNth is called when production nth is exited.
 func (s *BaseBundListener) ExitNth(ctx *NthContext) {}
 
+// EnterExec is called when production exec is entered.
+func (s *BaseBundListener) EnterExec(ctx *ExecContext) {}
+
+// ExitExec is called when production exec is exited.
+func (s *BaseBundListener) ExitExec(ctx *ExecContext) {}
+
 // EnterName_term is called when production name_term is entered.
 func (s *BaseBundListener) EnterName_term(ctx *Name_termContext) {}
 
@@ -170,3 +176,27 @@ func (s *BaseBundListener) EnterLambda(ctx *LambdaContext) {}
 
 // ExitLambda is called when production lambda is exited.
 func (s *BaseBundListener) ExitLambda(ctx *LambdaContext) {}
+
+// EnterChannel_out is called when production channel_out is entered.
+func (s *BaseBundListener) EnterChannel_out(ctx *Channel_outContext) {}
+
+// ExitChannel_out is called when production channel_out is exited.
+func (s *BaseBundListener) ExitChannel_out(ctx *Channel_outContext) {}
+
+// EnterChannel_in is called when production channel_in is entered.
+func (s *BaseBundListener) EnterChannel_in(ctx *Channel_inContext) {}
+
+// ExitChannel_in is called when production channel_in is exited.
+func (s *BaseBundListener) ExitChannel_in(ctx *Channel_inContext) {}
+
+// EnterSys_channel_out is called when production sys_channel_out is entered.
+func (s *BaseBundListener) EnterSys_channel_out(ctx *Sys_channel_outContext) {}
+
+// ExitSys_channel_out is called when production sys_channel_out is exited.
+func (s *BaseBundListener) ExitSys_channel_out(ctx *Sys_channel_outContext) {}
+
+// EnterSys_channel_in is called when production sys_channel_in is entered.
+func (s *BaseBundListener) EnterSys_channel_in(ctx *Sys_channel_inContext) {}
+
+// ExitSys_channel_in is called when production sys_channel_in is exited.
+func (s *BaseBundListener) ExitSys_channel_in(ctx *Sys_channel_inContext) {}

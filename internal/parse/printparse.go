@@ -123,3 +123,23 @@ func (l *bundListener) ExitDrop_term(c *parser.Drop_termContext) {
 func (l *bundListener) ExitDuplicate_term(c *parser.Duplicate_termContext) {
 	fmt.Printf("DUPLICATE LAST VALUE FROM STACK\n")
 }
+
+func (l *bundListener) EnterExec(c *parser.ExecContext) {
+	fmt.Printf("EXEC: %v\n", c.GetValue().GetText())
+}
+
+func (l *bundListener) ExitChannel_out(c *parser.Channel_outContext) {
+	fmt.Printf("CHANNEL OUT: %v\n", c.GetName().GetText())
+}
+
+func (l *bundListener) ExitChannel_in(c *parser.Channel_inContext) {
+	fmt.Printf("CHANNEL IN: %v\n", c.GetName().GetText())
+}
+
+func (l *bundListener) ExitSys_channel_out(c *parser.Sys_channel_outContext) {
+	fmt.Printf("SYS CHANNEL OUT: %v %v\n", c.GetSys().GetText(), c.GetName().GetText())
+}
+
+func (l *bundListener) ExitSys_channel_in(c *parser.Sys_channel_inContext) {
+	fmt.Printf("SYS CHANNEL IN: %v %v\n", c.GetSys().GetText(), c.GetName().GetText())
+}

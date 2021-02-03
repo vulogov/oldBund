@@ -26,6 +26,11 @@ expressions
     | sys_directive
     | cmd
     | sys_cmd
+    | exec
+    | channel_in
+    | channel_out
+    | sys_channel_in
+    | sys_channel_out
     | lambda )*
   ;
 
@@ -33,7 +38,8 @@ term: ( nth | integer
   | oct_integer | hex_integer | bin_integer
   | float_term | string_term | false_term | true_term
   | name_term | duplicate_term | drop_term
-  | begin | end | pair | block | directive | cmd ) ;
+  | channel_in | channel_out | sys_channel_in | sys_channel_out
+  | begin | end | pair | block | directive | cmd | sys_cmd | exec ) ;
 
 pvalue: (integer | nth
   | oct_integer | hex_integer | bin_integer
@@ -51,6 +57,7 @@ hex_integer:  value=HEX_INTEGER ;
 oct_integer:  value=OCT_INTEGER ;
 integer:      value=INTEGER ;
 nth:          value=NTH ;
+exec:         value=EXECUTE ;
 
 
 //
@@ -93,6 +100,20 @@ sys_cmd
 lambda
   : '[' name=NAME ']' (body+=term)* '.'
   ;
+
+channel_out
+  : '[' name=NAME '>'
+  ;
+channel_in
+  : '<' name=NAME ']'
+  ;
+sys_channel_out
+  : sys=SYS '[' name=NAME '>'
+  ;
+sys_channel_in
+  : '<' name=NAME ']' sys=SYS
+  ;
+
 
 INTEGER
   : (SIGN)? DECIMAL_INTEGER
@@ -151,7 +172,7 @@ TOEND:   ';' ;
 SLASH:   '/' ;
 
 SYS
-  : ('@'|'*'|'$'|'`'|'?'|'!')+
+  : ('@'|'*'|'$'|'`'|'?')+
   ;
 
 DIR
@@ -168,6 +189,10 @@ DUPLICATE
 
 DROP
   : '_'
+  ;
+
+EXECUTE
+  : ('!')+
   ;
 
 SKIP_

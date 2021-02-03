@@ -44,6 +44,9 @@ type BundListener interface {
 	// EnterNth is called when entering the nth production.
 	EnterNth(c *NthContext)
 
+	// EnterExec is called when entering the exec production.
+	EnterExec(c *ExecContext)
+
 	// EnterName_term is called when entering the name_term production.
 	EnterName_term(c *Name_termContext)
 
@@ -83,6 +86,18 @@ type BundListener interface {
 	// EnterLambda is called when entering the lambda production.
 	EnterLambda(c *LambdaContext)
 
+	// EnterChannel_out is called when entering the channel_out production.
+	EnterChannel_out(c *Channel_outContext)
+
+	// EnterChannel_in is called when entering the channel_in production.
+	EnterChannel_in(c *Channel_inContext)
+
+	// EnterSys_channel_out is called when entering the sys_channel_out production.
+	EnterSys_channel_out(c *Sys_channel_outContext)
+
+	// EnterSys_channel_in is called when entering the sys_channel_in production.
+	EnterSys_channel_in(c *Sys_channel_inContext)
+
 	// ExitExpressions is called when exiting the expressions production.
 	ExitExpressions(c *ExpressionsContext)
 
@@ -118,6 +133,9 @@ type BundListener interface {
 
 	// ExitNth is called when exiting the nth production.
 	ExitNth(c *NthContext)
+
+	// ExitExec is called when exiting the exec production.
+	ExitExec(c *ExecContext)
 
 	// ExitName_term is called when exiting the name_term production.
 	ExitName_term(c *Name_termContext)
@@ -157,4 +175,16 @@ type BundListener interface {
 
 	// ExitLambda is called when exiting the lambda production.
 	ExitLambda(c *LambdaContext)
+
+	// ExitChannel_out is called when exiting the channel_out production.
+	ExitChannel_out(c *Channel_outContext)
+
+	// ExitChannel_in is called when exiting the channel_in production.
+	ExitChannel_in(c *Channel_inContext)
+
+	// ExitSys_channel_out is called when exiting the sys_channel_out production.
+	ExitSys_channel_out(c *Sys_channel_outContext)
+
+	// ExitSys_channel_in is called when exiting the sys_channel_in production.
+	ExitSys_channel_in(c *Sys_channel_inContext)
 }
