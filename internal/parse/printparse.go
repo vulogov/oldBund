@@ -66,8 +66,27 @@ func (l *bundListener) ExitSys_name_term(c *parser.Sys_name_termContext) {
 	fmt.Printf("SYS name: %v %v \n", c.GetSys().GetText(), c.GetValue().GetText())
 }
 
+func (l *bundListener) EnterLambda(c *parser.LambdaContext) {
+	fmt.Printf("define lambda: %v \n", c.GetName().GetText())
+}
 func (l *bundListener) ExitLambda(c *parser.LambdaContext) {
 	fmt.Printf("lambda: %s \n", c.GetText())
+}
+
+func (l *bundListener) EnterLambda_cmd(c *parser.Lambda_cmdContext) {
+	if c == nil {
+		fmt.Println("OUCH !!")
+		return
+	}
+	n := c.GetName()
+	if n == nil {
+		fmt.Println("OUCH !! Empty name")
+		return
+	}
+	fmt.Printf("define command: %v \n", c.GetName().GetText())
+}
+func (l *bundListener) ExitLambda_cmd(c *parser.Lambda_cmdContext) {
+	fmt.Printf("command: %s \n", c.GetText())
 }
 
 func (l *bundListener) ExitInteger(c *parser.IntegerContext) {

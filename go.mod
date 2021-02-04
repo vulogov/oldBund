@@ -10,6 +10,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/gammazero/deque v0.0.0-20201010052221-3932da5530cc
 	github.com/goombaio/namegenerator v0.0.0-20181006234301-989e774b106e
+	github.com/lrita/cmap v0.0.0-20200818170753-e987cd3dfa73
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 	github.com/pieterclaerhout/go-log v1.14.0
 	github.com/rs/xid v1.2.1

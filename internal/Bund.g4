@@ -31,7 +31,8 @@ expressions
     | channel_out
     | sys_channel_in
     | sys_channel_out
-    | lambda )*
+    | lambda
+    | lambda_cmd )*
   ;
 
 term: ( nth | integer
@@ -100,6 +101,10 @@ sys_cmd
 lambda
   : '[' name=NAME ']' (body+=term)* '.'
   ;
+lambda_cmd
+  : '[[' name=CMD ']]' (body+=term)* '.'
+  ;
+
 
 channel_out
   : '[' name=NAME '>'
