@@ -17,16 +17,45 @@ type bundListener struct {
 	inPair  bool
 }
 
+type bundErrorListener struct {
+	antlr.ErrorListener
+	errors int
+}
+
 func ParserPrint(code string) {
+	errorListener := new(bundErrorListener)
 	_input := antlr.NewInputStream(code)
 	lexer := parser.NewBundLexer(_input)
+	lexer.RemoveErrorListeners()
+	lexer.AddErrorListener(errorListener)
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 	p := parser.NewBundParser(stream)
+	p.RemoveErrorListeners()
+	p.AddErrorListener(errorListener)
 	listener := new(bundListener)
 	listener.vm = vm.New("printer")
 	listener.inBlock = false
 	listener.inPair = false
+	if errorListener.errors > 0 {
+		fmt.Println(errorListener.errors, "errors detected")
+		return
+	}
 	antlr.ParseTreeWalkerDefault.Walk(listener, p.Expressions())
+	fmt.Println("Errors detected:", errorListener.errors)
+}
+
+func (l *bundErrorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbol interface{}, line, column int, msg string, e antlr.RecognitionException) {
+	fmt.Println("SYNTAX:", line, column, msg)
+	l.errors += 1
+}
+func (l *bundErrorListener) ReportAmbiguity(recognizer antlr.Parser, dfa *antlr.DFA, startIndex, stopIndex int, exact bool, ambigAlts *antlr.BitSet, configs antlr.ATNConfigSet) {
+	l.errors += 1
+}
+func (l *bundErrorListener) ReportAttemptingFullContext(recognizer antlr.Parser, dfa *antlr.DFA, startIndex, stopIndex int, conflictingAlts *antlr.BitSet, configs antlr.ATNConfigSet) {
+	l.errors += 1
+}
+func (l *bundErrorListener) ReportContextSensitivity(recognizer antlr.Parser, dfa *antlr.DFA, startIndex, stopIndex, prediction int, configs antlr.ATNConfigSet) {
+	l.errors += 1
 }
 
 func (l *bundListener) EnterBlock(c *parser.BlockContext) {
