@@ -6,14 +6,12 @@ import (
 
 	"github.com/gammazero/deque"
 
-	bcmd "github.com/vulogov/Bund/internal/cmd"
 	"github.com/vulogov/Bund/internal/value"
 )
 
 type VM struct {
 	name    string
 	lock    sync.RWMutex
-	cmd     bcmd.CMD
 	stack   deque.Deque
 	sstack  deque.Deque
 	block   deque.Deque

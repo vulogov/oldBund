@@ -20,6 +20,8 @@ const (
 	OP      = 8
 	CMD     = 9
 	NTH     = 10
+	REF     = 11
+	PARTIAL = 12
 )
 
 type VALUE struct {
@@ -137,5 +139,15 @@ func MakeNth(value string) (res *VALUE, err error) {
 		return
 	}
 	res, err = create(val, NTH)
+	return
+}
+
+func MakeSys(syscmd string, value string) (res *VALUE, err error) {
+	if syscmd == "@" {
+		return create(value, REF)
+	}
+	if syscmd == "$" {
+		return create(value, PARTIAL)
+	}
 	return
 }
