@@ -30,5 +30,5 @@ func (l *LAMBDA) Register(name string, f func(v *vm.VM), desc string) bool {
 }
 
 func (l *LAMBDA) Get(name string) func(v *vm.VM) {
-
+	return nil
 }

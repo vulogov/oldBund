@@ -15,7 +15,7 @@ PROJECT_MODULE  ?= $(shell $(GO) list -m)
 #############################
 # Targets
 #############################
-all: build
+all: pre build
 
 # Humans running make:
 build: git-hooks check-version clean lint test cover-report compile
@@ -24,7 +24,7 @@ build: git-hooks check-version clean lint test cover-report compile
 build-ci: check-version clean lint test compile-only
 
 # All clean commands
-clean: cover-clean compile-clean 
+clean: cover-clean compile-clean
 
 # Import fragments
 include build/compile.mk
@@ -34,5 +34,7 @@ include build/lint.mk
 include build/snapcraft.mk
 include build/test.mk
 include build/util.mk
+include build/pre.mk
+
 
 .PHONY: all build build-ci clean
