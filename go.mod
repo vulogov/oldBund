@@ -9,12 +9,14 @@ require (
 	github.com/common-nighthawk/go-figure v0.0.0-20200609044655-c4b36f998cf2
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/gammazero/deque v0.0.0-20201010052221-3932da5530cc
+	github.com/google/go-cmp v0.5.2 // indirect
 	github.com/goombaio/namegenerator v0.0.0-20181006234301-989e774b106e
 	github.com/lrita/cmap v0.0.0-20200818170753-e987cd3dfa73
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 	github.com/pieterclaerhout/go-log v1.14.0
 	github.com/rs/xid v1.2.1
 	github.com/stretchr/testify v1.7.0 // indirect
+	github.com/superwhiskers/crunch/v3 v3.5.4
 	github.com/tomlazar/table v0.1.0
 	golang.org/x/sys v0.0.0-20210119212857-b64e53b001e4 // indirect
 	golang.org/x/text v0.3.3 // indirect

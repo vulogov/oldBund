@@ -1,9 +1,7 @@
 package packages
 
-import (
-	"fmt"
-)
+import "github.com/pieterclaerhout/go-log"
 
-func init() {
-	fmt.Println("partial")
+func InitPartial() {
+	log.Debugf("Configuring an embedded partials")
 }

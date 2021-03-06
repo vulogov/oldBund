@@ -18,6 +18,7 @@ var (
 	Color      = App.Flag("color", "--color : Enable colors on terminal --no-color : Disable colors .").Default("true").Bool()
 	ID         = App.Flag("id", "Unique application ID").Default(xid.New().String()).String()
 	Name       = App.Flag("name", "Application name").Default(NG.Generate()).String()
+	BufSize    = App.Flag("bufsize", "i/o buffer size").Default("4096").Int()
 
 	Version = App.Command("version", "Display information about [ theBund ]")
 	VBanner = App.Flag("banner", "Display [ theBund ] banner .").Default("false").Bool()
