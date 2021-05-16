@@ -8,3 +8,5 @@ pre:
 	go get gotest.tools/gotestsum
 	go get golang.org/x/tools/internal/imports@v0.0.0-20200522201501-cb1345f3a375
 	go get golang.org/x/tools/internal/imports@v0.0.0-20200522201501-cb1345f3a375
+	go get github.com/stretchr/testify/assert@v1.7.0
+	go get github.com/apex/log

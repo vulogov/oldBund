@@ -11,6 +11,7 @@ require (
 	github.com/gammazero/deque v0.0.0-20201010052221-3932da5530cc
 	github.com/google/go-cmp v0.5.2 // indirect
 	github.com/goombaio/namegenerator v0.0.0-20181006234301-989e774b106e
+	github.com/kr/pretty v0.2.0 // indirect
 	github.com/lrita/cmap v0.0.0-20200818170753-e987cd3dfa73
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 	github.com/pieterclaerhout/go-log v1.14.0
@@ -21,4 +22,6 @@ require (
 	golang.org/x/sys v0.0.0-20210119212857-b64e53b001e4 // indirect
 	golang.org/x/text v0.3.3 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
+	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20200605160147-a5ece683394c // indirect
 )

@@ -121,7 +121,7 @@ sys_channel_in
 
 
 INTEGER
-  : (SIGN)? DECIMAL_INTEGER
+  :  (SIGN)? DECIMAL_INTEGER
   ;
 
 DECIMAL_INTEGER
